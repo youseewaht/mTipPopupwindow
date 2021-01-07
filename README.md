@@ -30,14 +30,14 @@ dependencies {
      * @param clickListener 右边按钮点击事件
      */
      
-     TextShowPopupWindow popupWindow = new TextShowPopupWindow(getApplicationContext(), "温馨提示", "您好，账户余额不足请及时充值", "去充值", false, new View.OnClickListener() {
+     TextShowPopupWindow popupWindow = new TextShowPopupWindow(Activity.this, "温馨提示", "您好，账户余额不足请及时充值", "去充值", false, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //确认按钮点击事件
                 //业务处理
             }
         });
-        View view = LayoutInflater.from(getApplicationContext()).inflate(R.layout.activity_main,null);
+        View view = LayoutInflater.from(Activity.this).inflate(R.layout.activity_main,null);
         popupWindow.showAtLocation(view, Gravity.CENTER,0,0);
 ```
 #### 工具类使用    
