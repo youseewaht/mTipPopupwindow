@@ -49,12 +49,19 @@ public class Utils {
         return m.matches();
     }
 
-    //判断注册账号 true为通过验证
-    public static boolean isAccount(String str) throws PatternSyntaxException {
+    /**
+     * 判断注册账号 true为通过验证
+     * @param str 账号
+     * @param min 最小长度
+     * @param max 最大长度
+     * @return
+     * @throws PatternSyntaxException
+     */
+    public static boolean isAccount(String str,int min,int max) throws PatternSyntaxException {
         if (str == null) {
             return false;
         }
-        String regex = "^(?![0-9]+$)(?![a-zA-Z]+$)[A-Za-z_][A-Za-z_0-9]{5,15}$";//(字母开头，允许5-16字节，允许字母数字下划线)    ^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$
+        String regex = "^(?![0-9]+$)(?![a-zA-Z]+$)[A-Za-z_][A-Za-z_0-9]{"+min+","+max+"}$";//(字母开头，允许5-16字节，允许字母数字下划线)    ^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$
         Pattern p = Pattern.compile(regex);
         Matcher m = p.matcher(str);
         return m.matches();
@@ -72,17 +79,23 @@ public class Utils {
     }
 
     /**
-     *
+     * 获取当前时间
      * @param type "yyyy-MM-dd HH:mm:ss"
      * @return
      */
     public static String getCurrentTime(String type) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(type);
-        //获取当前时间
+
         Date date = new Date();
         return simpleDateFormat.format(date);
     }
 
+    /**
+     * 毫秒值转换
+     * @param time
+     * @param type
+     * @return
+     */
     public static String timeMillisFormat(long time,String type) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(type);
         //获取当前时间
@@ -110,7 +123,7 @@ public class Utils {
     }
 
     /**
-     *
+     * 月份增加
      * @param month 增加的月数 eg： 1  2  3
      * @param date 起始时间
      * @param type 返回类型 eg："yyyy-MM-dd" "yyyy-MM-dd HH:mm:ss"
@@ -128,7 +141,7 @@ public class Utils {
         return time;
     }
     /**
-     *
+     * 天数增加
      * @param day 增加的天数 eg： 1  2  3
      * @param date 起始时间
      * @param type 返回类型 eg："yyyy-MM-dd" "yyyy-MM-dd HH:mm:ss"
@@ -148,6 +161,9 @@ public class Utils {
 
     /**
      * 根据屏幕的分辨率从 dp 的单位 转成为 px(像素)
+     * @param context
+     * @param dpValue
+     * @return
      */
     public static int dip2px(Context context, float dpValue) {
         final float scale = context.getResources().getDisplayMetrics().density;
@@ -163,9 +179,9 @@ public class Utils {
     public static boolean isConSpeCharacters(String string){
         if(string.replaceAll("[\u4e00-\u9fa5]*[a-z]*[A-Z]*\\d*-*_*\\s*","").length()==0){
             //不包含特殊字符
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 
     /**
@@ -180,7 +196,6 @@ public class Utils {
 
     /**
      * 将double格式化为指定小数位的String，不足小数位用0补全
-     *
      * @param v     需要格式化的数字
      * @param scale 小数点后保留几位
      * @return
@@ -188,7 +203,7 @@ public class Utils {
     public static String roundByScale(double v, int scale) {
         if (scale < 0) {
             throw new IllegalArgumentException(
-                    "The   scale   must   be   a   positive   integer   or   zero");
+                    "输入位数有误");
         }
         if (scale == 0) {
             return new DecimalFormat("0").format(v);
@@ -298,7 +313,6 @@ public class Utils {
 
     /**
      * 判断文件是否存在
-     *
      * @param path 文件的路径
      * @return
      */
@@ -312,6 +326,8 @@ public class Utils {
 
     /**
      * 转换文件大小
+     * @param fileS 文件大小
+     * @return
      */
     public static String formatFileSize(long fileS) {
         DecimalFormat df = new DecimalFormat("#.00");
@@ -334,7 +350,6 @@ public class Utils {
 
     /**
      * 获得屏幕高度
-     *
      * @param context
      * @return
      */
@@ -348,7 +363,6 @@ public class Utils {
 
     /**
      * 获得屏幕宽度
-     *
      * @param context
      * @return
      */
