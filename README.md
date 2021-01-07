@@ -18,7 +18,7 @@ dependencies {
 	        implementation 'com.github.youseewaht:mTipPopupwindow:1.0.1'
 }
 ```
-#### Step 3.      
+#### popupwindow使用 
 ```
 /**
      *
@@ -40,3 +40,20 @@ dependencies {
         View view = LayoutInflater.from(getApplicationContext()).inflate(R.layout.activity_main,null);
         popupWindow.showAtLocation(view, Gravity.CENTER,0,0);
 ```
+#### 工具类使用    
+
+```
+//手机号判断 true为通过验证
+Utils.isMobileNO("13888888888");
+
+/**
+     * 判断注册账号 true为通过验证
+     * @param str 账号
+     * @param min 最小长度
+     * @param max 最大长度
+     * @return
+     * @throws PatternSyntaxException
+     */
+Utils.isAccount("账号",5,15);
+```
+
