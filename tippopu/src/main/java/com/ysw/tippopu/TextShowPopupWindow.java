@@ -25,11 +25,11 @@ public class TextShowPopupWindow extends PopupWindow {
      * @param context 上下文
      * @param title 标题
      * @param content 内容
-     * @param btnStr 右边按钮文字
+     * @param btnStr 确认按钮文字
      * @param cancelBtn 是否展示取消按钮
      * @param clickListener 右边按钮点击事件
      */
-    public TextShowPopupWindow(Activity context, String title, String content, String btnStr, boolean cancelBtn, View.OnClickListener clickListener) {
+    public TextShowPopupWindow(Context context, String title, String content, String btnStr, boolean cancelBtn, View.OnClickListener clickListener) {
         super(context);
         this.mContext = context;
         this.mTitle = title;
