@@ -15,7 +15,7 @@ allprojects {
 #### Step 2. Add the dependency   
 ```
 dependencies {
-	        implementation 'com.github.youseewaht:mTipPopupwindow:1.0'
+	        implementation 'com.github.youseewaht:mTipPopupwindow:1.0.1'
 }
 ```
 #### Step 3.      
