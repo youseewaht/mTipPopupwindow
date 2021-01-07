@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B5000000">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:paddingBottom="15dp"
+        android:background="@drawable/fff_bg"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/popu_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text=""
+            android:textColor="#414141"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/popu_content_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text=""
+            android:textColor="#5C6373"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/popu_btn_cancle"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                style="?android:attr/borderlessButtonStyle"
+                android:text="取消"
+                android:background="@drawable/cancle_btn_background"
+                android:textColor="#3EBDFF"
+                android:textSize="14sp"/>
+
+            <Button
+                android:id="@+id/popu_btn_sub"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                style="?android:attr/borderlessButtonStyle"
+                android:background="@drawable/btn_background"
+                android:textSize="14sp"
+                android:text="确定"
+                android:textColor="#FFF"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

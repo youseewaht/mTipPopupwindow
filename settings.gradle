@@ -1,0 +1,3 @@
+include ':tippopu'
+include ':app'
+rootProject.name = "TipPopu"
